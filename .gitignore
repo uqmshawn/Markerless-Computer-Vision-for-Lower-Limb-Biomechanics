@@ -1,0 +1,246 @@
+# Thesis Repository .gitignore
+
+# ============================================================================
+# Specific Files/Folders to Exclude
+# ============================================================================
+
+# Thesis drafts and submissions (keep private)
+Update_150525/
+theeesiiiss submission/
+Thesis_Final_Draft.pdf
+High_Level_Framework.pdf
+
+# ============================================================================
+# Python
+# ============================================================================
+
+# Byte-compiled / optimized / DLL files
+__pycache__/
+*.py[cod]
+*$py.class
+
+# C extensions
+*.so
+
+# Distribution / packaging
+.Python
+build/
+develop-eggs/
+dist/
+downloads/
+eggs/
+.eggs/
+lib/
+lib64/
+parts/
+sdist/
+var/
+wheels/
+pip-wheel-metadata/
+share/python-wheels/
+*.egg-info/
+.installed.cfg
+*.egg
+MANIFEST
+
+# PyInstaller
+*.manifest
+*.spec
+
+# Unit test / coverage reports
+htmlcov/
+.tox/
+.nox/
+.coverage
+.coverage.*
+.cache
+nosetests.xml
+coverage.xml
+*.cover
+*.py,cover
+.hypothesis/
+.pytest_cache/
+
+# Jupyter Notebook
+.ipynb_checkpoints
+
+# pyenv
+.python-version
+
+# Virtual environments
+venv/
+env/
+ENV/
+env.bak/
+venv.bak/
+
+# ============================================================================
+# IDEs and Editors
+# ============================================================================
+
+# VSCode
+.vscode/
+*.code-workspace
+
+# PyCharm
+.idea/
+*.iml
+
+# Sublime Text
+*.sublime-project
+*.sublime-workspace
+
+# Vim
+*.swp
+*.swo
+*~
+
+# Emacs
+*~
+\#*\#
+.\#*
+
+# ============================================================================
+# Operating System
+# ============================================================================
+
+# macOS
+.DS_Store
+.AppleDouble
+.LSOverride
+._*
+
+# Windows
+Thumbs.db
+Thumbs.db:encryptable
+ehthumbs.db
+ehthumbs_vista.db
+*.stackdump
+[Dd]esktop.ini
+$RECYCLE.BIN/
+*.lnk
+
+# Linux
+*~
+.directory
+.Trash-*
+
+# ============================================================================
+# Research Data (Large Files)
+# ============================================================================
+
+# Large video files (use Git LFS or external hosting)
+*.mp4
+*.avi
+*.mov
+*.mkv
+
+# Large data files
+*.h5
+*.hdf5
+*.mat
+*.npy
+*.npz
+
+# Raw motion capture data (too large for Git)
+*.c3d
+*.trc
+*.mot
+
+# Model files
+*.osim
+*.biomod
+
+# ============================================================================
+# Temporary Files
+# ============================================================================
+
+# Temporary files
+*.tmp
+*.temp
+*.bak
+*.backup
+*.old
+
+# Log files
+*.log
+logs/
+
+# Cache directories
+cache/
+.cache/
+
+# ============================================================================
+# Build and Output
+# ============================================================================
+
+# Compiled documentation
+docs/_build/
+docs/.doctrees/
+
+# Output directories
+output/
+results/
+experiments/
+
+# Generated files
+generated/
+
+# ============================================================================
+# Secrets and Credentials
+# ============================================================================
+
+# Environment variables
+.env
+.env.local
+.env.*.local
+
+# API keys and credentials
+secrets/
+credentials/
+*.key
+*.pem
+
+# ============================================================================
+# Project Specific
+# ============================================================================
+
+# Personal notes and drafts
+notes/
+drafts/
+personal/
+scratch/
+
+# Large datasets (document in README where to download)
+data/raw/
+data/processed/
+
+# Checkpoints and model weights
+checkpoints/
+weights/
+*.pth
+*.pt
+*.ckpt
+
+# ============================================================================
+# Keep These (Exceptions)
+# ============================================================================
+
+# Keep sample data
+!data-samples/
+
+# Keep placeholder images (small files)
+!assets/**/*.png
+!assets/**/*.gif
+!assets/**/*.jpg
+
+# Keep documentation images
+!docs/**/*.png
+!docs/**/*.gif
+!docs/**/*.jpg
+
+# Keep figures
+!figures/**/*.png
+!figures/**/*.pdf
+!figures/**/*.svg
+
