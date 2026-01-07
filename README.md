@@ -1,7 +1,10 @@
-# Markerless Computer Vision for Lower Limb Biomechanical Analysis and Ground Reaction Force Estimation
+# Markerless Motion Capture for Lower Limb Musculoskeletal Analysis
 
-[![Research](https://img.shields.io/badge/Research-Biomechanics-blue)](https://github.com)
-[![Status](https://img.shields.io/badge/Status-Completed-success)](https://github.com)
+**Development and Validation of Ground Reaction Force Estimation**
+
+[![University](https://img.shields.io/badge/University-UQ-purple)](https://www.uq.edu.au/)
+[![Degree](https://img.shields.io/badge/Degree-Bachelor%20of%20Engineering-blue)](https://github.com)
+[![Status](https://img.shields.io/badge/Status-Completed%20July%202025-success)](https://github.com)
 [![License](https://img.shields.io/badge/License-MIT-green)](LICENSE)
 [![Python](https://img.shields.io/badge/Python-3.9-blue)](https://www.python.org/)
 [![OpenSim](https://img.shields.io/badge/OpenSim-4.3-orange)](https://opensim.stanford.edu/)
@@ -13,7 +16,7 @@
   <img src="assets/hero-image.png" alt="Markerless Biomechanical Analysis System" width="100%">
 </p>
 
-> **A comprehensive markerless motion capture system for estimating ground reaction forces from consumer-grade smartphone cameras**
+> **A comprehensive markerless motion capture system for lower limb biomechanical analysis using commercial-grade cameras costing under $2,000**
 
 <p align="center">
   <img src="assets/demos/running-analysis.gif" alt="Running Analysis Demo" width="45%">
@@ -24,7 +27,7 @@
 
 ## 🎯 Overview
 
-This repository documents a Master's thesis research project that develops and validates a markerless computer vision pipeline for lower limb musculoskeletal analysis and ground reaction force (GRF) estimation using sub-optimal camera inputs. The system transforms ordinary smartphone videos into clinically relevant biomechanical measurements without requiring specialized laboratory equipment.
+This repository documents a Bachelor of Engineering thesis completed at The University of Queensland (July 2025) that develops and validates a markerless computer vision system for comprehensive lower limb biomechanical analysis, including ground reaction force (GRF) estimation using commercial-grade cameras costing under $2,000. The system achieves a 98% equipment cost reduction compared to traditional marker-based systems (which exceed $100,000) while maintaining clinical accuracy.
 
 ### Key Innovation
 
@@ -38,15 +41,18 @@ Traditional biomechanical analysis requires expensive motion capture systems ($1
   <img src="assets/results/grf-comparison.png" alt="GRF Estimation Results" width="80%">
 </p>
 
-- ✅ **89.6% accuracy** in vertical GRF estimation (vs. force plate ground truth)
-- ✅ **RMSE: 0.14 BW** for vertical ground reaction forces
-- ✅ **Correlation: r = 0.95** with gold-standard measurements
-- ✅ Works with **unsynchronized smartphone cameras**
-- ✅ **No specialized equipment** required
-- ✅ **Outperforms prior methods** by 15-20% in sub-optimal conditions
+### Validated Performance Metrics
+
+- ✅ **R² = 0.890** (95% CI: 0.878-0.902) for vertical GRF - **exceeds clinical threshold of 0.85**
+- ✅ **Joint angle RMSE: 3.54° ± 1.02°** - meets 5° acceptability criterion
+- ✅ **Hungarian algorithm assignment: 100% success rate** with 35.95 mm spatial accuracy
+- ✅ **28% improvement** over standard triangulation methods
+- ✅ **98% cost reduction** - under $2,000 vs. $100,000+ traditional systems
+- ✅ **81 seconds processing time** for 60-second trials on standard hardware
+- ✅ **External validation** confirmed against AddBiomechanics dataset
 
 <p align="center">
-  <img src="assets/results/accuracy-comparison.png" alt="Accuracy Comparison" width="70%">
+  <img src="assets/results/joint-angles.png" alt="Joint Angle Validation" width="70%">
 </p>
 
 ---
@@ -55,12 +61,13 @@ Traditional biomechanical analysis requires expensive motion capture systems ($1
 
 | Metric | Value | Clinical Significance |
 |--------|-------|----------------------|
-| Vertical GRF RMSE | 0.14 BW | Excellent for load monitoring |
-| Peak Force Accuracy | 89.6% | Suitable for clinical assessment |
-| Correlation (r) | 0.95 | Strong agreement with force plates |
-| AP GRF RMSE | 0.06 BW | Good for gait analysis |
-| ML GRF RMSE | 0.04 BW | Acceptable for stability assessment |
-| Contact Timing Error | ±16-22 ms | Precise event detection |
+| Vertical GRF R² | 0.890 (95% CI: 0.878-0.902) | Exceeds clinical threshold (0.85) |
+| Joint Angle RMSE | 3.54° ± 1.02° | Meets acceptability criterion (< 5°) |
+| Hungarian Assignment | 100% success, 35.95 mm accuracy | Optimal keypoint matching |
+| Triangulation Improvement | 28% over standard methods | Biomechanically-informed approach |
+| Processing Speed | 81s for 60s trial | Real-time capable on standard hardware |
+| Equipment Cost | < $2,000 | 98% reduction vs. traditional systems |
+| External Validation | 1057.88 N (range: 1000-1112 N) | Confirmed generalizability |
 
 ---
 
@@ -142,6 +149,38 @@ Traditional biomechanical analysis requires expensive motion capture systems ($1
 │         (Vertical, Anterior-Posterior, Medial-Lateral)          │
 └─────────────────────────────────────────────────────────────────┘
 ```
+
+---
+
+## 💡 Key Technical Innovations
+
+### 1. Biomechanically-Informed Triangulation
+- **28% improvement** over standard Direct Linear Transform (DLT) methods
+- Incorporates anatomical constraints to ensure physiologically plausible pose estimates
+- Likelihood-weighted multi-view reconstruction using Pose2Sim framework
+- Reduces 3D reconstruction error through domain-specific knowledge integration
+
+### 2. Hungarian Algorithm for Optimal Keypoint Assignment
+- **100% success rate** in matching computer vision keypoints to biomechanical model markers
+- **35.95 mm spatial accuracy** in marker assignment
+- Solves the fundamental integration challenge with guaranteed global optimality
+- Vertical trajectory similarity matching for robust correspondence
+
+### 3. Physics-Based Force Estimation
+- Validated approach for estimating 3D ground reaction forces from markerless kinematic data
+- Inverse dynamics using OpenSim with Rajagopal musculoskeletal model
+- Maintains clinical validity across all force components (Fx, Fy, Fz)
+- External validation against AddBiomechanics dataset confirms generalizability
+
+### 4. Clinical Validation Framework
+- Comprehensive validation against gold-standard marker-based motion capture
+- Force plate measurements for ground truth comparison
+- Exceeds clinical accuracy thresholds (R² > 0.85 for GRF, RMSE < 5° for joint angles)
+- Real-world implementation demonstrated on treadmill running at 11.5 km/h
+
+<p align="center">
+  <img src="assets/results/hungarian-algorithm.png" alt="Hungarian Algorithm Visualization" width="70%">
+</p>
 
 ---
 
@@ -425,17 +464,21 @@ For questions, collaborations, or more information about this research, please o
 
 ## 📖 Citation
 
-If you use this work in your research, please cite:
+This research was completed as a Bachelor of Engineering thesis. If you use this work in your research, please cite:
 
 ```bibtex
-@mastersthesis{markerless_grf_2024,
-  title={Markerless Computer Vision Techniques for Lower Limb Musculoskeletal Analysis and Force Estimation Using Sub-optimal Camera Inputs},
-  author={[Your Name]},
-  year={2024},
-  school={[Your University]},
-  type={Master's Thesis}
+@thesis{shawn2025markerless,
+  title={Markerless Motion Capture for Lower Limb Musculoskeletal Analysis: Development and Validation of Ground Reaction Force Estimation},
+  author={Shawn, Meheraj},
+  year={2025},
+  school={The University of Queensland},
+  type={Bachelor of Engineering Thesis},
+  address={School of Electrical Engineering and Computer Science, St Lucia, QLD 4072, Australia},
+  note={Supervised by Dr. Alina Bialkowski. Available at: https://github.com/meherajShawn/Markerless-Computer-Vision-for-Lower-Limb-Biomechanics}
 }
 ```
+
+**Note**: This is an undergraduate thesis completed in July 2025 at The University of Queensland. The work has not been published in a peer-reviewed journal or conference.
 
 ---
 
