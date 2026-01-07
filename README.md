@@ -13,14 +13,39 @@
 > 🚀 **New to this repository?** Start with the **[QUICK_START.md](QUICK_START.md)** guide to get everything set up in 30 minutes!
 
 <p align="center">
-  <img src="assets/hero-image.png" alt="Markerless Biomechanical Analysis System" width="100%">
+  <img src="assets/hero-image.png" alt="Complete Methodology and Pipeline Overview" width="100%">
 </p>
 
 > **A comprehensive markerless motion capture system for lower limb biomechanical analysis using commercial-grade cameras costing under $2,000**
 
+*The image above shows the complete methodology and processing pipeline from raw video capture through to ground reaction force estimation.*
+
+### 🎬 System in Action
+
 <p align="center">
-  <img src="assets/demos/running-analysis.gif" alt="Running Analysis Demo" width="45%">
-  <img src="assets/demos/3d-reconstruction.gif" alt="3D Reconstruction Demo" width="45%">
+  <img src="assets/demos/running-triangulation.gif" alt="Running Triangulation" width="45%">
+  <img src="assets/demos/walking-triangulation.gif" alt="Walking Triangulation" width="45%">
+</p>
+
+<p align="center">
+  <em>3D triangulation and reconstruction for running (left) and walking (right) activities</em>
+</p>
+
+<p align="center">
+  <img src="assets/demos/opensim-ik.gif" alt="OpenSim Inverse Kinematics" width="45%">
+  <img src="assets/demos/grf-mokka.gif" alt="Ground Reaction Force Visualization" width="45%">
+</p>
+
+<p align="center">
+  <em>OpenSim inverse kinematics model (left) and ground reaction force visualization in Mokka (right)</em>
+</p>
+
+<p align="center">
+  <img src="assets/demos/keypoints-detected.gif" alt="All Keypoints Detected" width="60%">
+</p>
+
+<p align="center">
+  <em>Real-time keypoint detection showing all 26 HALPE anatomical landmarks</em>
 </p>
 
 ---
@@ -37,10 +62,6 @@ Traditional biomechanical analysis requires expensive motion capture systems ($1
 
 ## 🏆 Key Achievements
 
-<p align="center">
-  <img src="assets/results/grf-comparison.png" alt="GRF Estimation Results" width="80%">
-</p>
-
 ### Validated Performance Metrics
 
 - ✅ **R² = 0.890** (95% CI: 0.878-0.902) for vertical GRF - **exceeds clinical threshold of 0.85**
@@ -51,8 +72,41 @@ Traditional biomechanical analysis requires expensive motion capture systems ($1
 - ✅ **81 seconds processing time** for 60-second trials on standard hardware
 - ✅ **External validation** confirmed against AddBiomechanics dataset
 
+### Ground Reaction Force Validation
+
 <p align="center">
-  <img src="assets/results/joint-angles.png" alt="Joint Angle Validation" width="70%">
+  <img src="assets/results/grf-validation-results.png" alt="GRF Validation Results" width="80%">
+</p>
+
+<p align="center">
+  <em>Comprehensive GRF validation showing excellent agreement between predicted and measured forces</em>
+</p>
+
+<p align="center">
+  <img src="assets/results/vertical-grf-running.png" alt="Vertical GRF During Running" width="48%">
+  <img src="assets/results/zoomed-fz-comparison.png" alt="Zoomed Fz Comparison" width="48%">
+</p>
+
+<p align="center">
+  <em>Vertical ground reaction force during running (left) and detailed comparison of first 2 seconds (right)</em>
+</p>
+
+### Joint Angle Validation
+
+<p align="center">
+  <img src="assets/results/joint-angles.png" alt="Joint Angle Combined Analysis" width="70%">
+</p>
+
+<p align="center">
+  <em>Joint angle validation across multiple lower limb joints showing RMSE < 5° criterion</em>
+</p>
+
+<p align="center">
+  <img src="assets/results/hip-flexion-comparison.png" alt="Hip Flexion Right vs Left" width="60%">
+</p>
+
+<p align="center">
+  <em>Hip flexion angle comparison between right and left limbs demonstrating bilateral symmetry</em>
 </p>
 
 ---
@@ -69,13 +123,25 @@ Traditional biomechanical analysis requires expensive motion capture systems ($1
 | Equipment Cost | < $2,000 | 98% reduction vs. traditional systems |
 | External Validation | 1057.88 N (range: 1000-1112 N) | Confirmed generalizability |
 
+### Gait Cycle Analysis
+
+<p align="center">
+  <img src="assets/results/gait-cycles-ensemble.png" alt="Ensemble Average of Gait Cycles" width="75%">
+</p>
+
+<p align="center">
+  <em>Ensemble average of gait cycles with variability bands showing consistency across multiple trials</em>
+</p>
+
 ---
 
 ## 🔬 System Architecture
 
 <p align="center">
-  <img src="assets/pipeline/pipeline-flowchart.png" alt="Complete Pipeline Architecture" width="90%">
+  <img src="assets/pipeline/methodology-and-pipeline.png" alt="Complete Methodology and Pipeline Architecture" width="90%">
 </p>
+
+*Complete methodology and pipeline overview showing the integration of computer vision, biomechanical modeling, and force estimation.*
 
 ### 7-Stage Processing Pipeline
 
@@ -112,6 +178,18 @@ Traditional biomechanical analysis requires expensive motion capture systems ($1
 └────────────────────────┬────────────────────────────────────────┘
                          │
                          ▼
+```
+
+<p align="center">
+  <img src="assets/demos/halpe26-keypoints.png" alt="HALPE-26 Keypoint Model" width="45%">
+  <img src="assets/demos/alphapose-detection.png" alt="AlphaPose Detection" width="45%">
+</p>
+
+<p align="center">
+  <em>HALPE-26 keypoint model (left) and AlphaPose detection in action (right)</em>
+</p>
+
+```
 ┌─────────────────────────────────────────────────────────────────┐
 │  STAGE 4: Camera Synchronization                                 │
 │  • Cross-correlation of joint velocities                        │
@@ -166,21 +244,41 @@ Traditional biomechanical analysis requires expensive motion capture systems ($1
 - Solves the fundamental integration challenge with guaranteed global optimality
 - Vertical trajectory similarity matching for robust correspondence
 
+<p align="center">
+  <img src="assets/results/hungarian-algorithm.png" alt="Hungarian Algorithm Bipartite Graph" width="60%">
+</p>
+
+<p align="center">
+  <em>Hungarian algorithm bipartite graph showing optimal assignment between detected keypoints and model markers</em>
+</p>
+
+<p align="center">
+  <img src="assets/results/cost-matrix.png" alt="Partial Cost Matrix" width="70%">
+</p>
+
+<p align="center">
+  <em>Partial cost matrix visualization for selected GRF TRC keypoints demonstrating assignment optimization</em>
+</p>
+
 ### 3. Physics-Based Force Estimation
 - Validated approach for estimating 3D ground reaction forces from markerless kinematic data
 - Inverse dynamics using OpenSim with Rajagopal musculoskeletal model
 - Maintains clinical validity across all force components (Fx, Fy, Fz)
 - External validation against AddBiomechanics dataset confirms generalizability
 
+<p align="center">
+  <img src="assets/results/opensim-model.png" alt="Rajagopal Musculoskeletal Model" width="50%">
+</p>
+
+<p align="center">
+  <em>Rajagopal 2016 musculoskeletal model used for inverse kinematics and dynamics analysis</em>
+</p>
+
 ### 4. Clinical Validation Framework
 - Comprehensive validation against gold-standard marker-based motion capture
 - Force plate measurements for ground truth comparison
 - Exceeds clinical accuracy thresholds (R² > 0.85 for GRF, RMSE < 5° for joint angles)
 - Real-world implementation demonstrated on treadmill running at 11.5 km/h
-
-<p align="center">
-  <img src="assets/results/hungarian-algorithm.png" alt="Hungarian Algorithm Visualization" width="70%">
-</p>
 
 ---
 
@@ -211,6 +309,17 @@ Traditional biomechanical analysis requires expensive motion capture systems ($1
 - Stable tripods with smartphone mounts
 - Computer: 16GB+ RAM, 6+ core CPU, NVIDIA GTX 1660 or better
 - NVIDIA RTX 3080 GPU (16GB VRAM) for optimal performance
+
+### Experimental Setup
+
+<p align="center">
+  <img src="assets/setup/camera-setup.png" alt="Camera Configuration" width="48%">
+  <img src="assets/setup/participant-setup.png" alt="Participant Setup" width="48%">
+</p>
+
+<p align="center">
+  <em>Multi-camera setup configuration (left) and participant during data collection (right)</em>
+</p>
 
 ---
 
