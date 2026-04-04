@@ -31,8 +31,7 @@
 
 <p align="center">
   <img src="assets/demos/opensim-ik.gif" alt="OpenSim Inverse Kinematics" width="45%">
-  <img src="images/grfbutterfly.png" alt="Ground Reaction Force Butterfly Plot" width="45%">
-</p>
+  </p>
 
 <p align="center">
   <em>OpenSim inverse kinematics model (left) and ground reaction force butterfly plot (right)</em>
@@ -380,10 +379,6 @@ Traditional biomechanical analysis requires expensive motion capture systems ($1
 </p>
 
 ### Sample Results
-
-<p align="center">
-  <img src="images/joint_angle_combined.png" alt="Joint Kinematics Comparison" width="80%">
-</p>
 
 <p align="center">
   <img src="images/Processing%20Time%20Analysis%20-%20Copy.png" alt="Processing Time Analysis" width="70%">
