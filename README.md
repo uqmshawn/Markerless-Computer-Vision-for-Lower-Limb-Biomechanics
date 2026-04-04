@@ -10,8 +10,6 @@
 [![OpenSim](https://img.shields.io/badge/OpenSim-4.3-orange)](https://opensim.stanford.edu/)
 [![PyTorch](https://img.shields.io/badge/PyTorch-1.10-red)](https://pytorch.org/)
 
-> 🚀 **New to this repository?** Start with the **[QUICK_START.md](QUICK_START.md)** guide to get everything set up in 30 minutes!
-
 <p align="center">
   <img src="assets/hero-image.png" alt="Complete Methodology and Pipeline Overview" width="100%">
 </p>
@@ -33,11 +31,11 @@
 
 <p align="center">
   <img src="assets/demos/opensim-ik.gif" alt="OpenSim Inverse Kinematics" width="45%">
-  <img src="assets/demos/grf-mokka.gif" alt="Ground Reaction Force Visualization" width="45%">
+  <img src="images/grfbutterfly.png" alt="Ground Reaction Force Butterfly Plot" width="45%">
 </p>
 
 <p align="center">
-  <em>OpenSim inverse kinematics model (left) and ground reaction force visualization in Mokka (right)</em>
+  <em>OpenSim inverse kinematics model (left) and ground reaction force butterfly plot (right)</em>
 </p>
 
 <p align="center">
@@ -75,7 +73,7 @@ Traditional biomechanical analysis requires expensive motion capture systems ($1
 ### Ground Reaction Force Validation
 
 <p align="center">
-  <img src="assets/results/grf-validation-results.png" alt="GRF Validation Results" width="80%">
+  <img src="images/GRF%20Validation%20Results.png" alt="GRF Validation Results" width="80%">
 </p>
 
 <p align="center">
@@ -83,8 +81,8 @@ Traditional biomechanical analysis requires expensive motion capture systems ($1
 </p>
 
 <p align="center">
-  <img src="assets/results/vertical-grf-running.png" alt="Vertical GRF During Running" width="48%">
-  <img src="assets/results/zoomed-fz-comparison.png" alt="Zoomed Fz Comparison" width="48%">
+  <img src="images/Vertical%20Ground%20Reaction%20Force%20During%20Running.png" alt="Vertical GRF During Running" width="48%">
+  <img src="images/Zoomed%20Fz%20Comparison%20(First%202s).png" alt="Zoomed Fz Comparison" width="48%">
 </p>
 
 <p align="center">
@@ -94,7 +92,7 @@ Traditional biomechanical analysis requires expensive motion capture systems ($1
 ### Joint Angle Validation
 
 <p align="center">
-  <img src="assets/results/joint-angles.png" alt="Joint Angle Combined Analysis" width="70%">
+  <img src="images/joint_angle_combined.png" alt="Joint Angle Combined Analysis" width="70%">
 </p>
 
 <p align="center">
@@ -102,7 +100,7 @@ Traditional biomechanical analysis requires expensive motion capture systems ($1
 </p>
 
 <p align="center">
-  <img src="assets/results/hip-flexion-comparison.png" alt="Hip Flexion Right vs Left" width="60%">
+  <img src="images/Hip%20Flexion%20-%20Right%20vs.%20Left.png" alt="Hip Flexion Right vs Left" width="60%">
 </p>
 
 <p align="center">
@@ -126,7 +124,7 @@ Traditional biomechanical analysis requires expensive motion capture systems ($1
 ### Gait Cycle Analysis
 
 <p align="center">
-  <img src="assets/results/gait-cycles-ensemble.png" alt="Ensemble Average of Gait Cycles" width="75%">
+  <img src="images/Ensemble%20Average%20of%20Gait%20Cycles%20with%20Variability%20Bands.png" alt="Ensemble Average of Gait Cycles" width="75%">
 </p>
 
 <p align="center">
@@ -245,7 +243,7 @@ Traditional biomechanical analysis requires expensive motion capture systems ($1
 - Vertical trajectory similarity matching for robust correspondence
 
 <p align="center">
-  <img src="assets/results/hungarian-algorithm.png" alt="Hungarian Algorithm Bipartite Graph" width="60%">
+  <img src="images/Hungarian.png" alt="Hungarian Algorithm Bipartite Graph" width="60%">
 </p>
 
 <p align="center">
@@ -253,7 +251,7 @@ Traditional biomechanical analysis requires expensive motion capture systems ($1
 </p>
 
 <p align="center">
-  <img src="assets/results/cost-matrix.png" alt="Partial Cost Matrix" width="70%">
+  <img src="images/Partial%20Cost%20Matrix%20-%20Selected%20GRF%20TRC%20Keypoint.png" alt="Partial Cost Matrix" width="70%">
 </p>
 
 <p align="center">
@@ -267,7 +265,7 @@ Traditional biomechanical analysis requires expensive motion capture systems ($1
 - External validation against AddBiomechanics dataset confirms generalizability
 
 <p align="center">
-  <img src="assets/results/opensim-model.png" alt="Rajagopal Musculoskeletal Model" width="50%">
+  <img src="images/raja.png" alt="Rajagopal Musculoskeletal Model" width="50%">
 </p>
 
 <p align="center">
@@ -326,22 +324,17 @@ Traditional biomechanical analysis requires expensive motion capture systems ($1
 ## 📁 Repository Structure
 
 ```
+├── assets/                        # Visual assets used in README
+│   ├── demos/                     # Demo GIFs and detection images
+│   ├── pipeline/                  # Pipeline architecture diagrams
+│   └── setup/                     # Camera and participant setup images
 ├── docs/                          # Comprehensive documentation
 │   ├── methodology/               # Detailed methodology for each stage
 │   ├── results/                   # Results and findings
 │   ├── technical-specs/           # Technical specifications
 │   └── datasets/                  # Dataset descriptions
-├── figures/                       # Visual assets and diagrams
-│   ├── pipeline/                  # Pipeline architecture diagrams
-│   ├── calibration/               # Camera calibration examples
-│   ├── pose-estimation/           # 2D pose detection visualizations
-│   ├── triangulation/             # 3D reconstruction examples
-│   ├── opensim/                   # Biomechanical modeling outputs
-│   └── results/                   # Results visualizations
-├── videos/                        # Demo videos and examples
-│   ├── running/                   # Running gait examples
-│   ├── walking/                   # Walking gait examples
-│   └── jumping/                   # Jumping examples
+├── images/                        # Research result figures and plots
+├── videos/                        # Demo videos and GIF animations
 ├── data-samples/                  # Sample data files
 │   └── README.md                  # Data format descriptions
 └── papers/                        # Thesis and related documents
@@ -382,18 +375,18 @@ Traditional biomechanical analysis requires expensive motion capture systems ($1
 ### Pipeline Visualization
 
 <p align="center">
-  <img src="assets/demos/pose-detection.gif" alt="2D Pose Detection" width="45%">
-  <img src="assets/setup/calibration-example.png" alt="Camera Calibration" width="45%">
+  <img src="images/3.%20Pose%20Detection%20(1).png" alt="2D Pose Detection" width="45%">
+  <img src="images/camera.png" alt="Camera Calibration Setup" width="45%">
 </p>
 
 ### Sample Results
 
 <p align="center">
-  <img src="assets/results/joint-angles.png" alt="Joint Kinematics Comparison" width="80%">
+  <img src="images/joint_angle_combined.png" alt="Joint Kinematics Comparison" width="80%">
 </p>
 
 <p align="center">
-  <img src="assets/results/temporal-accuracy.png" alt="Contact Event Detection" width="70%">
+  <img src="images/Processing%20Time%20Analysis%20-%20Copy.png" alt="Processing Time Analysis" width="70%">
 </p>
 
 ---
@@ -513,31 +506,6 @@ Traditional biomechanical analysis requires expensive motion capture systems ($1
 - **[Full Methodology](docs/methodology/README.md)** - Detailed methods
 - **[Results Analysis](docs/results/README.md)** - Comprehensive results
 
-### 🎨 Visual Assets & Media
-
-All images, diagrams, and GIFs displayed in this README are located in the [`assets/`](assets/) directory:
-
-- **[Pipeline Diagrams](assets/pipeline/)**: Architecture and flowcharts
-- **[Results Visualizations](assets/results/)**: GRF curves, accuracy plots
-- **[Demo GIFs](assets/demos/)**: Animated demonstrations
-- **[Setup Images](assets/setup/)**: Camera configuration diagrams
-
-**📖 Complete Guide**: See **[VISUAL_ASSETS_GUIDE.md](VISUAL_ASSETS_GUIDE.md)** for comprehensive instructions on creating and managing all visual assets.
-
-**Quick Start**:
-```bash
-# Generate placeholder images (immediate)
-python scripts/generate_placeholder_images.py
-
-# Generate actual visualizations from your data (recommended)
-python scripts/generate_all_visuals.py --data-dir results/ --output-dir assets/
-
-# See detailed instructions
-cat scripts/create_readme_visuals.md
-```
-
-**Asset Status**: Currently using placeholders. Replace with actual visualizations from your research data for best results.
-
 ---
 
 ## 🙏 Acknowledgments
@@ -583,7 +551,7 @@ This research was completed as a Bachelor of Engineering thesis. If you use this
   school={The University of Queensland},
   type={Bachelor of Engineering Thesis},
   address={School of Electrical Engineering and Computer Science, St Lucia, QLD 4072, Australia},
-  note={Supervised by Dr. Alina Bialkowski. Available at: https://github.com/meherajShawn/Markerless-Computer-Vision-for-Lower-Limb-Biomechanics}
+  note={Supervised by Dr. Alina Bialkowski. Available at: https://github.com/uqmshawn/Markerless-Computer-Vision-for-Lower-Limb-Biomechanics}
 }
 ```
 
@@ -592,5 +560,3 @@ This research was completed as a Bachelor of Engineering thesis. If you use this
 ---
 
 **⭐ If you find this research useful, please consider starring this repository!**
-
-
