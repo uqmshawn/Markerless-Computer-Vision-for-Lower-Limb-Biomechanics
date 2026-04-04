@@ -5,7 +5,7 @@
 [![University](https://img.shields.io/badge/University-UQ-purple)](https://www.uq.edu.au/)
 [![Degree](https://img.shields.io/badge/Degree-Bachelor%20of%20Engineering-blue)](https://github.com)
 [![Status](https://img.shields.io/badge/Status-Completed%20July%202025-success)](https://github.com)
-[![License](https://img.shields.io/badge/License-MIT-green)](LICENSE)
+[![License](https://img.shields.io/badge/License-CC%20BY--NC%204.0-lightgrey)](LICENSE)
 [![Python](https://img.shields.io/badge/Python-3.9-blue)](https://www.python.org/)
 [![OpenSim](https://img.shields.io/badge/OpenSim-4.3-orange)](https://opensim.stanford.edu/)
 [![PyTorch](https://img.shields.io/badge/PyTorch-1.10-red)](https://pytorch.org/)
